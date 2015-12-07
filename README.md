@@ -65,7 +65,7 @@ You may use either design pattern to implement the `Entities`:
 - `prototypical inheritance` with `Object Prototypes`
 - `loose inheritance` with `Closure Constructors`
 
-Example of `prototypical inheritance` with `object prototypes`.
+Example of `prototypical inheritance` with `object prototypes`:
 ```
 //Constructor
 function ParentProtoObj(param1, param2){
@@ -95,7 +95,7 @@ var myParentProto = new ParentProtoObj('one', 'two');
 var myChildProto = new ChildProtoObj('two','three');
 ```
 
-Example of `loose inheritance` with `closure constructors`.
+Example of `loose inheritance` with `closure constructors`:
 ```
 //constructor
 function ParentClosureObj(param1, param2){
