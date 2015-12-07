@@ -60,33 +60,43 @@ Workflow:
 
 Implement the following objects. You may use `prototypical inheritance`  with `Object Prototypes` or you may use `loose inheritance` with `Closure Constructors`.
 
-This is an example of creating a prototype object, and then creating a child object that inherits and overrides from it.
+Example of `prototypical inheritance` with `object prototypes`.
 ```
+//Constructor
 function ParentProtoObj(param1, param2){
   this.p1 = param1;
   this.p2 = param2;
 }
+//Method
 ParentProtoObj.prototype.swap = function(){
   var temp = this.p1;
   this.p1 = this.p2;
   this.p2 = temp;
 }
 
+//Constructor
 function ChildProtoObj(param1, param2){
+  //Inherit from ParentProtoObj
   ParentProtoObj.call(this, param1, param2);
 }
+//Override ParentProtoObj method
 ChildProtoObj.prototype.swap = function(){
   this.p1 = 'nope';
   this.p2 = 'nope';
 }
 
+//instantiate objects
 var myParentProto = new ParentProtoObj('one', 'two');
 var myChildProto = new ChildProtoObj('two','three');
 ```
 
-This is an example of creating an object using a closure constructor, and then creating a child object that inherits from it and overrides it.
+Example of `loose inheritance` with `closure constructors`.
 ```
+//constructor
 function ParentClosureObj(param1, param2){
+  //private logic can go here
+
+  //return an interface to expose what you want to be public
   return {
     p1:param1,
     p2:param2,
@@ -97,12 +107,19 @@ function ParentClosureObj(param1, param2){
     }
   };
 }
+//constructor
 function ChildClosureObj(param1, param2){
+  
+  //inherit from ParentClosureObj
   var self = ParentClosureObj(param1, param2);
+
+  //override swap method
   self.swap = function(){
     this.p1 = 'nope';
     this.p2 = 'nope';
   };
+
+  //return interface to expose what you want to be public
   return self;
 }
 
