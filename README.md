@@ -24,9 +24,16 @@ O represent Animals
 * represent Plants
 ```
 
-Every 1/3 of a second the `World` takes a `turn`. For every turn, every `Entity` in the `World` can take an `Action`. These actions can be `move`, `eat`, `grow` and reproduce.
+Every 1/3 of a second the `World` takes a `turn`. For each turn, every `Entity` in the `World` can take an `Action`. These actions can be `move`, `eat`, `grow` and reproduce.
 
 ## Instructions
+
+Keep these questions in mind before you start working on the project, after you have completed the exercise circle back and answer them.
+
+1. Name an instance that you encountered polymorphism in this project.
+1. Does this project demonstrate encapsulation? If yes, how so?
+1. Do you think you have a better understanding of inheritance?
+1. Where did you run into abstraction during this project?
 
 You have been provided with:
 
@@ -89,7 +96,6 @@ Workflow:
   1. If a `Herbivore` exists, return a new `Action` with type `eat` and direction set to that of adjacent `Herbivore`.
   1. Else if adjacent `Carnivore` exists and an adjacent empty space exists, return a new `Action` with type `reproduce` and a direction set to that of the empty space.
   1. Else return a new `Action` with type `move` and set direction to that of the empty space.
-
 
 ## Project Roadmap:
 
