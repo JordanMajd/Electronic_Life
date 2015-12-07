@@ -153,7 +153,7 @@ var myChildClos = new ChildClosureObj('two','three');
 
 ### Herbivore (child of Animal)
 
-- act: override parent `function`.
+- Herbivore.prototype.act(view): override parent `function`.
   1. Check for adjacent plants using `view` object.
   1. Check for adjacent Herbivore using the `view` object.
   1. Check for adjacent empty space using the `view` object.
@@ -163,7 +163,7 @@ var myChildClos = new ChildClosureObj('two','three');
 
 ### Carnivore (child of Animal)
 
-- act: override parent `function`.
+- Carnivore.prototype.act(view): override parent `function`.
   1. Check for adjacent `Herbivore` using `view` object.
   1. Check for adjacent `Carnivore` using the `view` object.
   1. Check for adjacent empty space using the `view` object.

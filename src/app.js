@@ -18,6 +18,7 @@ var ActionRunner = require('./game/actionrunner'),
   defaultMap = require('./maps/defaultmap');
 
 
+//TODO Update the legend with your entities as you implement them
 var myLegend = new Legend();
 myLegend.set('#', Wall);
 myLegend.set('O', Entity);
