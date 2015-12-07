@@ -58,6 +58,58 @@ Workflow:
 
 ## Implement
 
+Implement the following objects. You may use `prototypical inheritance`  with `Object Prototypes` or you may use `loose inheritance` with `Closure Constructors`.
+
+This is an example of creating a prototype object, and then creating a child object that inherits and overrides from it.
+```
+function ParentProtoObj(param1, param2){
+  this.p1 = param1;
+  this.p2 = param2;
+}
+ParentProtoObj.prototype.swap = function(){
+  var temp = this.p1;
+  this.p1 = this.p2;
+  this.p2 = temp;
+}
+
+function ChildProtoObj(param1, param2){
+  ParentProtoObj.call(this, param1, param2);
+}
+ChildProtoObj.prototype.swap = function(){
+  this.p1 = 'nope';
+  this.p2 = 'nope';
+}
+
+var myParentProto = new ParentProtoObj('one', 'two');
+var myChildProto = new ChildProtoObj('two','three');
+```
+
+This is an example of creating an object using a closure constructor, and then creating a child object that inherits from it and overrides it.
+```
+function ParentClosureObj(param1, param2){
+  return {
+    p1:param1,
+    p2:param2,
+    swap:function(){
+      var temp = this.p1;
+      this.p1 = this.p2;
+      this.p2 = temp;
+    }
+  };
+}
+function ChildClosureObj(param1, param2){
+  var self = ParentClosureObj(param1, param2);
+  self.swap = function(){
+    this.p1 = 'nope';
+    this.p2 = 'nope';
+  };
+  return self;
+}
+
+var myParentClos = new ParentClosureObj('one', 'two');
+var myChildClos = new ChildClosureObj('two','three');
+```
+
 ### Entity
 
 - Entity.prototype.energy: a `number`. `LifelikeWorld` and `ActionRunner` both provide examples of its usage.
