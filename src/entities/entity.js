@@ -11,7 +11,7 @@ Entity.prototype.act  = function(view){
   if (view.look(this.direction) !== " ") {
     this.direction = view.find(" ") || "s";
   }
-  return new Action("move", this.direction);
+  return new Action(Action.types.move, this.direction);
 };
 
 module.exports = Entity;
