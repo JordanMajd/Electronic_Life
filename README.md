@@ -134,9 +134,9 @@ var myChildClos = new ChildClosureObj('two','three');
 
 ### Entity
 
-- Entity.prototype.energy: a `number`. `LifelikeWorld` and `ActionRunner` both provide examples of its usage.
-- Entity.prototype.direction: a `string` to represent human readable direction. Possible values are `n``ne``e``se``s``sw``nw`.
-- act(view): a `function` that takes in a `View` object as a parameter and returns an `Action` object. This function gets called by the `World` object every single turn and uses the returned `Action` to make changes to the `World`.
+- Entity.energy: a `number`. `LifelikeWorld` and `ActionRunner` both provide examples of its usage.
+- Entity.direction: a `string` to represent human readable direction. Possible values are `n``ne``e``se``s``sw``nw`.
+- Entity.prototype.act(view): a `function` that takes in a `View` object as a parameter and returns an `Action` object. This function gets called by the `World` object every single turn and uses the returned `Action` to make changes to the `World`.
 
 ### Animal (child of Entity)
 
