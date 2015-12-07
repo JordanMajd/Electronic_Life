@@ -2,7 +2,7 @@
 
 The goal of Electronic Life is to create a very simplified simulation of the world using Object Oriented Programming.
 
-The world is represented by a grid of characters, every character in the grid represents an Entity in that world.
+The `World` is represented by a `Grid` of characters, every character in the `Grid` represents an `Entity` in that world. An `Entity` can be anything from a wall to a plant to an animal.
 
 Example:
 ```
@@ -170,6 +170,20 @@ var myChildClos = new ChildClosureObj('two','three');
   1. If a `Herbivore` exists, return a new `Action` with type `eat` and direction set to that of adjacent `Herbivore`.
   1. Else if adjacent `Carnivore` exists and an adjacent empty space exists, return a new `Action` with type `reproduce` and a direction set to that of the empty space.
   1. Else return a new `Action` with type `move` and set direction to that of the empty space.
+
+## Stretch Goals:
+
+Now that you have a basic idea of how to add `Entities` to the world the options are endless. You can inherit from any of the objects in this project. You could add in your own `Actions`, `Worlds` or `Views` to make the world any way you would like.
+
+Ideas:
+
+- Balance the ecosystem by making the animals movement, hunting, foraging and eating patterns smarter.
+- Create a type of `Plant` that eats animals.
+- Add in an `Entity.prototype.age` so that objects only can live so many turns.
+- Add in an `Entity.prototype.rest` so entities need to rest every so many turns to regain rest.
+- Create a `Human` that can create `Sheltars` that if they are next to them they regain rest faster.
+- Create a `Raptor` object that is a child of `Carnivore` that  travels in packs.
+- Add in rivers and lakes that have their own ecosystems.
 
 ## Project Roadmap:
 
