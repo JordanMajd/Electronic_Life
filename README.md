@@ -39,7 +39,7 @@ You have been provided with:
 
 1. A list of `entities` that need implemented.
 1. All the code to run the program.
-1. Documentation for all the code.
+1. **Documentation** for all the code.
 
 You should be able to use all of this provided information to implement everything in the list.
 
@@ -154,8 +154,8 @@ var myChildClos = new ChildClosureObj('two','three');
 ### Herbivore (child of Animal)
 
 - Herbivore.prototype.act(view): override parent `function`.
-  1. Check for adjacent plants using `view` object.
-  1. Check for adjacent Herbivore using the `view` object.
+  1. Check for adjacent `Plant` using `view` object.
+  1. Check for adjacent `Herbivore` using the `view` object.
   1. Check for adjacent empty space using the `view` object.
   1. If a plant exists, return a new `Action` with type `eat` and direction set to that of adjacent plant.
   1. Else if adjacent animal exists and an adjacent empty space exists, return a new `Action` with type `reproduce` and a direction set to that of the empty space.
