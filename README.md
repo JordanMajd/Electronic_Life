@@ -41,11 +41,11 @@ You have been provided with:
 1. All the code to run the program.
 1. **Documentation** for all the code.
 
-You should be able to use all of this provided information to implement everything in the list.
+You should be able to use all provided information to implement the list. When in doubt read the documentation. Still in doubt? Read the code.
 
 Workflow:
 
-1. Implement an `entity` (Entity, Animal, Plant etc...)
+1. Implement an `entity` (`Entity`, `Animal`, `Plant` etc...)
 1. Add the `entity` to the `Legend` in `app.js`.
 1. Replace a character in the map `maps/defaultmap.js` with the character you assigned the `entity` in the legend.
 1. Run the program to ensure everything worked.
@@ -58,9 +58,9 @@ Workflow:
 
 ## Implement
 
-Implement the following objects. They already have files created for them in the `scr/entities` directory.
+Implement the following objects. They already have files created for them in the `scr/entities` directory. The `Entity` `Wall` might be a decent example of how to inherit and override `Entity`.
 
-You may use either design pattern:
+You may use either design pattern to implement the `Entities`:
 
 - `prototypical inheritance` with `Object Prototypes`
 - `loose inheritance` with `Closure Constructors`
