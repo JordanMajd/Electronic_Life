@@ -58,7 +58,12 @@ Workflow:
 
 ## Implement
 
-Implement the following objects. You may use `prototypical inheritance`  with `Object Prototypes` or you may use `loose inheritance` with `Closure Constructors`.
+Implement the following objects. They already have files created for them in the `scr/entities` directory.
+
+You may use either design pattern:
+
+-`prototypical inheritance` with `Object Prototypes`
+-`loose inheritance` with `Closure Constructors`
 
 Example of `prototypical inheritance` with `object prototypes`.
 ```
@@ -109,7 +114,7 @@ function ParentClosureObj(param1, param2){
 }
 //constructor
 function ChildClosureObj(param1, param2){
-  
+
   //inherit from ParentClosureObj
   var self = ParentClosureObj(param1, param2);
 
