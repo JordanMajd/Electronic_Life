@@ -62,8 +62,8 @@ Implement the following objects. They already have files created for them in the
 
 You may use either design pattern:
 
--`prototypical inheritance` with `Object Prototypes`
--`loose inheritance` with `Closure Constructors`
+- `prototypical inheritance` with `Object Prototypes`
+- `loose inheritance` with `Closure Constructors`
 
 Example of `prototypical inheritance` with `object prototypes`.
 ```
