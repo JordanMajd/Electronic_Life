@@ -20,13 +20,15 @@ var ActionRunner = require('./game/actionrunner'),
 
 //NOTE: Update the legend with your entities as you implement them
 var myLegend = new Legend();
+
+//NOTE: if you are using Loose Inheritance with Closure Constructors you will need to update the Wall object because it is set up to use Prototypical.
 myLegend.set('#', Wall);
 myLegend.set('O', Entity);
 
 
 //create a LifelikeWorld with the defaultMap and the provided legend.
 //NOTE: remember to add entities as you implement them to defaultMap
-//NOTE: there are other maps! 
+//NOTE: there are other maps!
 var myWorld = new LifelikeWorld(defaultMap, myLegend);
 
 
