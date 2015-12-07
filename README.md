@@ -90,7 +90,7 @@ ChildProtoObj.prototype.swap = function(){
   this.p2 = 'nope';
 }
 
-//instantiate objects
+//instantiate objects note: needs new keyword
 var myParentProto = new ParentProtoObj('one', 'two');
 var myChildProto = new ChildProtoObj('two','three');
 ```
@@ -128,8 +128,9 @@ function ChildClosureObj(param1, param2){
   return self;
 }
 
-var myParentClos = new ParentClosureObj('one', 'two');
-var myChildClos = new ChildClosureObj('two','three');
+//note: no need for new keyword
+var myParentClos = ParentClosureObj('one', 'two');
+var myChildClos = ChildClosureObj('two','three');
 ```
 
 ### Entity
