@@ -14,5 +14,5 @@ myLegend.set(' ', Empty);
 var conways = new ConwayWorld(conwayMap, myLegend);
 
 //Megaman EXECUTE! \o/
-new WorldAnimator(conways).run();
+new WorldAnimator(conways, 25).run();
 //

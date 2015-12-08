@@ -1,14 +1,15 @@
 'use strict';
 
-function WorldAnimator(world) {
+function WorldAnimator(world, tickRate) {
   this.world = world;
+  this.tickRate = tickRate || 333;
 }
 
 WorldAnimator.prototype.run = function(){
   var self = this;
-  this.inverval = setInterval(function() {
+  self.inverval = setInterval(function() {
     self.tick();
-  },333);
+  }, self.tickRate);
 };
 
 WorldAnimator.prototype.tick = function() {
@@ -16,7 +17,7 @@ WorldAnimator.prototype.tick = function() {
 
   //clear terminal
   console.log('\x1B[2J');
-  
+
   console.log(this.world.toString());
 };
 
