@@ -61,8 +61,8 @@ Workflow:
 *In a browser:*
 
 1. `npm install`
-2. `browserify app.js -o elife.js`
-3. add bundle.js to your index.html
+2. `browserify src/app.js -o dist/elife.js`
+3. add elife.js to your index.html
 4. Extend `WorldAnimator` to output `world.toString` to canvas or the dom
 
 ## Implement
