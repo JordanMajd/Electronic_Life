@@ -14,6 +14,7 @@ View.prototype.look = function(direction) {
 };
 View.prototype.findAll = function(character) {
   var found = [];
+
   for (var direction in Utility.directions) {
     if (this.look(direction) === character) {
       found.push(direction);

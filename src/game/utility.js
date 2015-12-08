@@ -28,11 +28,12 @@ function entityFromChar(legend, ch) {
 
 //get character from an entity
 function charFromEntity(entity) {
-  if (entity === null) {
-    return " ";
-  } else {
-    return entity.originChar;
-  }
+  // if (entity === null) {
+  //   return " ";
+  // } else {
+  //   return entity.originChar;
+  // }
+  return entity.originChar;
 }
 
 function randomElement(array) {
