@@ -1,7 +1,7 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
 
-var DomWorldAnimator = require('./game/domworldanimator'),
+var CanvasWorldAnimator = require('./game/canvasworldanimator'),
   Legend = require('./game/legend'),
   Cell = require('./entities/cell'),
   Empty = require('./entities/empty'),
@@ -16,9 +16,9 @@ var conways = new ConwayWorld(conwayMap, myLegend);
 
 //Megaman EXECUTE! \o/
 // new WorldAnimator(conways, 25).run();
-new DomWorldAnimator(conways, 50).run();
+new CanvasWorldAnimator(conways, 50).run();
 
-},{"./entities/cell":2,"./entities/empty":3,"./game/domworldanimator":7,"./game/legend":9,"./maps/conwaymap":14,"./worlds/conwayworld":15}],2:[function(require,module,exports){
+},{"./entities/cell":2,"./entities/empty":3,"./game/canvasworldanimator":7,"./game/legend":9,"./maps/conwaymap":14,"./worlds/conwayworld":15}],2:[function(require,module,exports){
 'use strict';
 
 var Entity = require('../entities/entity'),
@@ -149,21 +149,35 @@ module.exports = ActionRunner;
 'use strict';
 
 var WorldAnimator = require('../game/worldanimator');
+var Cell = require('../entities/cell');
 
-function DomWorldAnimator(world, tickRate) {
+function CanvasWorldAnimator(world, tickRate) {
   WorldAnimator.call(this, world, tickRate);
 }
-DomWorldAnimator.prototype = Object.create(WorldAnimator.prototype);
+CanvasWorldAnimator.prototype = Object.create(WorldAnimator.prototype);
 
-DomWorldAnimator.prototype.tick = function() {
+CanvasWorldAnimator.prototype.tick = function() {
   this.world.turn();
 
-  document.querySelectorAll('#canvas')[0].innerHTML = '<pre>'+ this.world.toString() + '</pre>';
+  var canvas = document.querySelectorAll('#canvas-canvas')[0];
+  var context = canvas.getContext('2d');
+  var multiplier = 8;
+  context.canvas.width  = this.world.grid.width * multiplier;
+  context.canvas.height = this.world.grid.height * multiplier;
+
+  this.world.grid.forEach(function(entity, vector){
+    if(entity instanceof Cell){
+      context.fillStyle = '#ff5722';
+    }else{
+      context.fillStyle = '#2196f3';
+    }
+    context.fillRect(vector.x * multiplier, vector.y * multiplier, 1 * multiplier, 1 * multiplier);
+  });
 };
 
-module.exports = DomWorldAnimator;
+module.exports = CanvasWorldAnimator;
 
-},{"../game/worldanimator":13}],8:[function(require,module,exports){
+},{"../entities/cell":2,"../game/worldanimator":13}],8:[function(require,module,exports){
 'use strict';
 
 var Vector = require('../game/vector');

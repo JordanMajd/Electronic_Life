@@ -41,7 +41,13 @@ pre {
   font-family: 'Inconsolata', ;
   color: #ff5722;
 }
-#canvas {
+.center{
+  margin-left: auto;
+  margin-right: auto;
+  display: table;
+}
+
+#dom-canvas {
   padding: 0;
   color: #ff5722;
   background-color: #2196f3;
@@ -52,4 +58,11 @@ pre {
   display: table;
   border: 10px solid #ff5722;
   border-radius: 5%;
+}
+
+#canvas-canvas{
+  background-color: #2196f3;
+  margin-left: auto;
+  margin-right: auto;
+  border: 10px solid #ff5722;
 }
