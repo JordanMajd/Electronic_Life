@@ -1,7 +1,7 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
 
-var DomWorldAnimator = require('./game/worldanimator'),
+var DomWorldAnimator = require('./game/domworldanimator'),
   Legend = require('./game/legend'),
   Cell = require('./entities/cell'),
   Empty = require('./entities/empty'),
@@ -18,7 +18,7 @@ var conways = new ConwayWorld(conwayMap, myLegend);
 // new WorldAnimator(conways, 25).run();
 new DomWorldAnimator(conways, 50).run();
 
-},{"./entities/cell":2,"./entities/empty":3,"./game/legend":8,"./game/worldanimator":12,"./maps/conwaymap":13,"./worlds/conwayworld":14}],2:[function(require,module,exports){
+},{"./entities/cell":2,"./entities/empty":3,"./game/domworldanimator":7,"./game/legend":9,"./maps/conwaymap":14,"./worlds/conwayworld":15}],2:[function(require,module,exports){
 'use strict';
 
 var Entity = require('../entities/entity'),
@@ -145,7 +145,25 @@ ActionRunner.create = function(entity, vector, action){
 
 module.exports = ActionRunner;
 
-},{"../game/utility":9}],7:[function(require,module,exports){
+},{"../game/utility":10}],7:[function(require,module,exports){
+'use strict';
+
+var WorldAnimator = require('../game/worldanimator');
+
+function DomWorldAnimator(world, tickRate) {
+  WorldAnimator.call(this, world, tickRate);
+}
+DomWorldAnimator.prototype = Object.create(WorldAnimator.prototype);
+
+DomWorldAnimator.prototype.tick = function() {
+  this.world.turn();
+
+  document.querySelectorAll('#canvas')[0].innerHTML = '<pre>'+ this.world.toString() + '</pre>';
+};
+
+module.exports = DomWorldAnimator;
+
+},{"../game/worldanimator":13}],8:[function(require,module,exports){
 'use strict';
 
 var Vector = require('../game/vector');
@@ -177,7 +195,7 @@ Grid.prototype.forEach = function(callbackFunc, context) {
 
 module.exports = Grid;
 
-},{"../game/vector":10}],8:[function(require,module,exports){
+},{"../game/vector":11}],9:[function(require,module,exports){
 'use strict';
 
 function Legend(){
@@ -194,7 +212,7 @@ Legend.prototype.get = function(character){
 
 module.exports = Legend;
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 'use strict';
 
 var Vector = require('../game/vector');
@@ -249,7 +267,7 @@ module.exports.directions = directions;
 module.exports.directionNames = directionNames;
 module.exports.dirPlus = dirPlus;
 
-},{"../game/vector":10}],10:[function(require,module,exports){
+},{"../game/vector":11}],11:[function(require,module,exports){
 'use strict';
 
 function Vector(x, y) {
@@ -262,7 +280,7 @@ Vector.prototype.plus = function(other) {
 
 module.exports = Vector;
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 'use strict';
 
 var Utility = require('../game/utility');
@@ -299,7 +317,7 @@ View.prototype.find = function(character) {
 
 module.exports = View;
 
-},{"../game/utility":9}],12:[function(require,module,exports){
+},{"../game/utility":10}],13:[function(require,module,exports){
 'use strict';
 
 function WorldAnimator(world, tickRate) {
@@ -334,7 +352,7 @@ WorldAnimator.prototype.stop = function() {
 
 module.exports = WorldAnimator;
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 'use strict';
 
 var map=
@@ -379,7 +397,7 @@ var map=
 
 module.exports=map;
 
-},{}],14:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 'use strict';
 
 var World = require('../worlds/world'),
@@ -399,7 +417,7 @@ ConwayWorld.prototype.letAct = function(entity, vector) {
 
 module.exports = ConwayWorld;
 
-},{"../game/actionrunner":6,"../game/view":11,"../worlds/world":15}],15:[function(require,module,exports){
+},{"../game/actionrunner":6,"../game/view":12,"../worlds/world":16}],16:[function(require,module,exports){
 'use strict';
 
 var Grid = require('../game/grid'),
@@ -460,4 +478,4 @@ World.prototype.checkDestination = function(action, vector) {
 
 module.exports = World;
 
-},{"../game/grid":7,"../game/utility":9,"../game/vector":10,"../game/view":11}]},{},[1]);
+},{"../game/grid":8,"../game/utility":10,"../game/vector":11,"../game/view":12}]},{},[1]);

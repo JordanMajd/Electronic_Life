@@ -1,6 +1,6 @@
 'use strict';
 
-var DomWorldAnimator = require('./game/worldanimator'),
+var DomWorldAnimator = require('./game/domworldanimator'),
   Legend = require('./game/legend'),
   Cell = require('./entities/cell'),
   Empty = require('./entities/empty'),
