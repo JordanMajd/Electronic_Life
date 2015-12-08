@@ -58,12 +58,12 @@ Workflow:
 1. cd into `src`
 1. run `node app.js`
 
-*In a browser:*
+*In a Browser:*
 
-1. `npm install`
-2. `browserify src/app.js -o dist/elife.js`
+1. install browserify, `npm install -g browserify`
+2. in project root directory, `browserify src/app.js -o dist/elife.js`
 3. add elife.js to your index.html
-4. Extend `WorldAnimator` to output `world.toString` to canvas or the dom
+4. Inherit `WorldAnimator` and override `WorldAnimator.prototype.tick` to output `world.toString` to canvas or the dom.
 
 ## Implement
 
