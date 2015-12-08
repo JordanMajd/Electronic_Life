@@ -60,10 +60,17 @@ Workflow:
 
 *In a Browser:*
 
-1. install browserify, `npm install -g browserify`
-2. in project root directory, `browserify src/app.js -o dist/elife.js`
-3. add elife.js to your index.html
-4. Inherit `WorldAnimator` and override `WorldAnimator.prototype.tick` to output `world.toString` to canvas or the dom.
+- Dependencies:
+  1. install browserify, `npm install -g browserify`
+  1. install http-server, `npm install -g http-server`
+- Implementing:
+  1. In `app.js` implement a `domworldanimator` or a `canvasworldanimator` (note these may need edited as they are set up for branch `conway`)
+  1. In `index.html` uncomment the appropriate div, '#canvas-canvas' or `#dom-canvas`
+- Building and running:
+  1. in project root, `./build.sh`
+  1. `cd dist`
+  1. `http-server`
+  1. Open browser to `localhost:8080`
 
 ## Implement
 
