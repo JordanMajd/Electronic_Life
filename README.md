@@ -53,8 +53,17 @@ Workflow:
 
 ## Running
 
+*From The Command Line:*
+
 1. cd into `src`
 1. run `node app.js`
+
+*In a Browser:*
+
+1. install browserify, `npm install -g browserify`
+2. in project root directory, `browserify src/app.js -o dist/elife.js`
+3. add elife.js to your index.html
+4. Inherit `WorldAnimator` and override `WorldAnimator.prototype.tick` to output `world.toString` to canvas or the dom.
 
 ## Implement
 
@@ -81,9 +90,13 @@ ParentProtoObj.prototype.swap = function(){
 
 //Constructor
 function ChildProtoObj(param1, param2){
-  //Inherit from ParentProtoObj
+  //Call parent constructor with this context
   ParentProtoObj.call(this, param1, param2);
 }
+
+//Inherit parent prototypes
+ChildProtoObj.prototype = Object.create(ParentProtoObj.prototype);
+
 //Override ParentProtoObj method
 ChildProtoObj.prototype.swap = function(){
   this.p1 = 'nope';
@@ -178,6 +191,7 @@ Now that you have a basic idea of how to add `Entities` to the world the options
 
 Ideas:
 
+- Implement Conway's Game of Life (see section `Game of Life`)
 - Balance the ecosystem by making the animals movement, hunting, foraging and eating patterns smarter.
 - Create a type of `Plant` that eats animals.
 - Add in an `Entity.prototype.age` so that objects only can live so many turns.
@@ -186,9 +200,35 @@ Ideas:
 - Create a `Raptor` object that is a child of `Carnivore` that  travels in packs.
 - Add in rivers and lakes that have their own ecosystems.
 
+## Solution
+
+Solution branches have yet to be added. Details will be here when they are.
+
+## Game of Life
+
+[Conway's Game of Life](https://en.wikipedia.org/wiki/Conway's_Game_of_Life) was invented by John Conway, a Cambridge mathematician and was first published by the [Scientific American in 1970](http://web.stanford.edu/class/sts145/Library/life.pdf).  It is a simple zero-player game where everything is determined by the games initial state and a few simple rules. Cells are either alive or dead, and every tick new cells are created or old ones die.
+
+1. Survivals. Every cell with two or three neighboring cell survives for the next generation.
+1. Deaths. Each cell with four or more neighbors dies (is removed) from overpopulation. Every
+cell with one neighbor or none dies from isolation.
+1. Births. Each empty cell adjacent to exactly three neighbors--no more, no fewer--is a birth cell. A
+cell is placed on it at the next move.
+
+I've created a branch called `conway` that follows these rules. It can be checked out by running:
+```
+git checkout conway
+```
+
+In order to return to your master branch simply checkout master:
+```
+git checkout master
+```
+
 ## Project Roadmap:
 
+- Create solution branches.
 - Build a map generator.
+- Merge in some of the changes made in the `conway` branch.
 - Refactor and reduce the Action and ActionRunner objects to a single object.
 - Refactor the Legend to have some of the Utility methods that operate on the Legend.
 - Refactor the Utility object and extract the Direction logic to its own object.
