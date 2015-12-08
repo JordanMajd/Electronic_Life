@@ -1,23 +1,22 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
 
-var ActionRunner = require('./game/actionrunner'),
-  WorldAnimator = require('./game/worldanimator'),
-  Grid = require('./game/grid'),
-  Utility = require('./game/utility'),
-  Vector = require('./game/vector'),
-  View = require('./game/view'),
-  Legend = require('./game/legend'),
-  Entity = require('./entities/entity'),
-  Wall = require('./entities/wall'),
-  Animal = require('./entities/animal'),
-  Herbivore = require('./entities/herbivore'),
-  Carnivore = require('./entities/carnivore'),
-  Plant = require('./entities/plant'),
-  LifelikeWorld = require('./worlds/lifelikeworld'),
-  World = require('./worlds/world'),
-  defaultMap = require('./maps/defaultmap');
-
+var ActionRunner = require('./game/actionrunner');
+var WorldAnimator = require('./game/worldanimator');
+var Grid = require('./game/grid');
+var Utility = require('./game/utility');
+var Vector = require('./game/vector');
+var View = require('./game/view');
+var Legend = require('./game/legend');
+var Entity = require('./entities/entity');
+var Wall = require('./entities/wall');
+var Animal = require('./entities/animal');
+var Herbivore = require('./entities/herbivore');
+var Carnivore = require('./entities/carnivore');
+var Plant = require('./entities/plant');
+var LifelikeWorld = require('./worlds/lifelikeworld');
+var World = require('./worlds/world');
+var defaultMap = require('./maps/defaultmap');
 
 //NOTE: Update the legend with your entities as you implement them
 var myLegend = new Legend();
@@ -25,7 +24,6 @@ var myLegend = new Legend();
 //NOTE: if you are using Loose Inheritance with Closure Constructors you will need to update the Wall object because it is set up to use Prototypical.
 myLegend.set('#', Wall);
 myLegend.set('O', Entity);
-
 
 //create a LifelikeWorld with the defaultMap and the provided legend.
 //NOTE: remember to add entities as you implement them to defaultMap
@@ -372,8 +370,8 @@ WorldAnimator.prototype.tick = function() {
   var clearColor = '\x1b[0m';
 
   //clear term, set fg and bg color, print world, clear color options.
-  console.log(clearTerm + textColor + bgColor + this.world.toString() + clearColor);
-
+  // console.log(clearTerm + textColor + bgColor + this.world.toString() + clearColor);
+  document.querySelectorAll('#canvas')[0].innerHTML ='<pre>' + this.world.toString() + '</pre>';
 };
 
 WorldAnimator.prototype.stop = function() {

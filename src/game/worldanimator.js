@@ -23,7 +23,6 @@ WorldAnimator.prototype.tick = function() {
 
   //clear term, set fg and bg color, print world, clear color options.
   console.log(clearTerm + textColor + bgColor + this.world.toString() + clearColor);
-
 };
 
 WorldAnimator.prototype.stop = function() {

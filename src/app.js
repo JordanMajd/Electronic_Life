@@ -24,7 +24,6 @@ var myLegend = new Legend();
 myLegend.set('#', Wall);
 myLegend.set('O', Entity);
 
-
 //create a LifelikeWorld with the defaultMap and the provided legend.
 //NOTE: remember to add entities as you implement them to defaultMap
 //NOTE: there are other maps!
