@@ -1,8 +1,9 @@
 'use strict';
 
-function Action(type, direction){
+function Action(type, direction, character){
   this.type = type;
   this.direction = direction;
+  this.character = character;
 }
 
 Action.types = {
@@ -10,7 +11,8 @@ Action.types = {
   grow:'grow',
   move:'move',
   eat:'eat',
-  die:'die'
+  die:'die',
+  create:'create'
 };
 
 module.exports = Action;
