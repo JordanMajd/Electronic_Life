@@ -1,22 +1,21 @@
 'use strict';
 
-var ActionRunner = require('./game/actionrunner'),
-  WorldAnimator = require('./game/worldanimator'),
-  Grid = require('./game/grid'),
-  Utility = require('./game/utility'),
-  Vector = require('./game/vector'),
-  View = require('./game/view'),
-  Legend = require('./game/legend'),
-  Entity = require('./entities/entity'),
-  Wall = require('./entities/wall'),
-  Animal = require('./entities/animal'),
-  Herbivore = require('./entities/herbivore'),
-  Carnivore = require('./entities/carnivore'),
-  Plant = require('./entities/plant'),
-  LifelikeWorld = require('./worlds/lifelikeworld'),
-  World = require('./worlds/world'),
-  defaultMap = require('./maps/defaultmap');
-
+var ActionRunner = require('./game/actionrunner');
+var WorldAnimator = require('./game/worldanimator');
+var Grid = require('./game/grid');
+var Utility = require('./game/utility');
+var Vector = require('./game/vector');
+var View = require('./game/view');
+var Legend = require('./game/legend');
+var Entity = require('./entities/entity');
+var Wall = require('./entities/wall');
+var Animal = require('./entities/animal');
+var Herbivore = require('./entities/herbivore');
+var Carnivore = require('./entities/carnivore');
+var Plant = require('./entities/plant');
+var LifelikeWorld = require('./worlds/lifelikeworld');
+var World = require('./worlds/world');
+var defaultMap = require('./maps/defaultmap');
 
 //NOTE: Update the legend with your entities as you implement them
 var myLegend = new Legend();
