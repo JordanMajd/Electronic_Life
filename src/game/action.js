@@ -9,7 +9,9 @@ Action.types = {
   reproduce:'reproduce',
   grow:'grow',
   move:'move',
-  eat:'eat'
+  eat:'eat',
+  die:'die',
+  create:'create'
 };
 
 module.exports = Action;

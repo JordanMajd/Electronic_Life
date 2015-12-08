@@ -191,6 +191,10 @@ Ideas:
 - Create a `Raptor` object that is a child of `Carnivore` that  travels in packs.
 - Add in rivers and lakes that have their own ecosystems.
 
+## Solution
+
+Solution branches have yet to be added. Details will be here when they are.
+
 ## Game of Life
 
 [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway's_Game_of_Life) was invented by John Conway, a Cambridge mathematician and was first published by the [Scientific American in 1970](http://web.stanford.edu/class/sts145/Library/life.pdf).  It is a simple zero-player game where everything is determined by the games initial state and a few simple rules. Cells are either alive or dead, and every tick new cells are created or old ones die.

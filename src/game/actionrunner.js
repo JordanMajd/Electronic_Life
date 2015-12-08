@@ -44,5 +44,14 @@ ActionRunner.reproduce = function(entity, vector, action) {
   this.grid.set(dest, baby);
   return true;
 };
+ActionRunner.die = function(entity, vector){
+  this.grid.set(vector, null);
+  return true;
+};
+ActionRunner.create = function(entity, vector, action){
+  var newEntity = Utility.entityFromChar(this.legend, action.character);
+  this.grid.set(vector, newEntity);
+  return true;
+};
 
 module.exports = ActionRunner;
