@@ -1,6 +1,6 @@
 'use strict';
 
-var WorldAnimator = require('./game/worldanimator'),
+var DomWorldAnimator = require('./game/worldanimator'),
   Legend = require('./game/legend'),
   Cell = require('./entities/cell'),
   Empty = require('./entities/empty'),
@@ -14,5 +14,5 @@ myLegend.set(' ', Empty);
 var conways = new ConwayWorld(conwayMap, myLegend);
 
 //Megaman EXECUTE! \o/
-new WorldAnimator(conways, 25).run();
-//
+// new WorldAnimator(conways, 25).run();
+new DomWorldAnimator(conways, 50).run();
