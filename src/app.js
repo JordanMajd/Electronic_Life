@@ -8,7 +8,7 @@ var WorldAnimator = require('./game/worldanimator'),
   conwayMap = require('./maps/conwaymap');
 
 var myLegend = new Legend();
-myLegend.set('#', Cell);
+myLegend.set('\u2588', Cell);
 myLegend.set(' ', Empty);
 
 var conways = new ConwayWorld(conwayMap, myLegend);

@@ -8,7 +8,7 @@ function Cell(){
 }
 Cell.prototype = Object.create(Entity.prototype);
 Cell.prototype.act = function(view){
-  var neighbors = view.findAll('#');
+  var neighbors = view.findAll('\u2588');
   if(neighbors.length < 2 || neighbors.length > 3){
       return new Action(Action.types.create, undefined, ' ');
   }

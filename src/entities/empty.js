@@ -8,9 +8,9 @@ function Empty(){
 }
 Empty.prototype = Object.create(Entity.prototype);
 Empty.prototype.act = function(view){
-  var neighbors = view.findAll('#');
+  var neighbors = view.findAll('\u2588');
   if(neighbors.length === 3){
-    return new Action(Action.types.create, undefined, '#');
+    return new Action(Action.types.create, undefined, '\u2588');
   }
 };
 
