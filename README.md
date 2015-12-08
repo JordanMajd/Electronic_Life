@@ -81,9 +81,13 @@ ParentProtoObj.prototype.swap = function(){
 
 //Constructor
 function ChildProtoObj(param1, param2){
-  //Inherit from ParentProtoObj
+  //Call parent constructor with this context
   ParentProtoObj.call(this, param1, param2);
 }
+
+//Inherit parent prototypes
+ChildProtoObj.prototype = Object.create(ParentProtoObj.prototype);
+
 //Override ParentProtoObj method
 ChildProtoObj.prototype.swap = function(){
   this.p1 = 'nope';

@@ -8,7 +8,7 @@ function Wall() {
   //delete self.act;
   //return self;
 }
-
+Wall.prototype = Object.create(Entity.prototype);
 Wall.prototype.act = null;
 
 module.exports = Wall;
