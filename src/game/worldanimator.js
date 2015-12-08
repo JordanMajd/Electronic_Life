@@ -18,7 +18,12 @@ WorldAnimator.prototype.tick = function() {
   //clear terminal
   console.log('\x1B[2J');
 
+  //set color to green
+  console.log('\x1b[32m');
   console.log(this.world.toString());
+
+  //clear colors so when the program terminates everything isn't messed up.
+  console.log('\x1b[0m');
 };
 
 WorldAnimator.prototype.stop = function() {
