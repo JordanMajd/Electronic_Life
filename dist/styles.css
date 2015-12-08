@@ -1,5 +1,15 @@
-#canvas {
+body {
   background-color: #e3f2fd;
   color: #ff5722;
-  transition: all 0.333s ease;
+}
+h1 {
+  text-align: center;
+}
+#canvas {
+  line-height: 0.9em;
+  margin-left: auto;
+  margin-right: auto;
+  display: table;
+  border: 5px solid #ff5722;
+  border-radius: 5%;
 }
