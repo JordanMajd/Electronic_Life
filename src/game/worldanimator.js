@@ -17,8 +17,8 @@ WorldAnimator.prototype.tick = function() {
 
   //term codes
   var clearTerm = '\x1B[2J';
-  var textColor = "\x1b[35m";
-  var bgColor = '\x1b[40m';
+  var textColor = '';//'\x1b[35m';
+  var bgColor =  '';//'\x1b[46m';
   var clearColor = '\x1b[0m';
 
   //clear term, set fg and bg color, print world, clear color options.
