@@ -48,6 +48,7 @@ ActionRunner.die = function(entity, vector){
 ActionRunner.create = function(entity, vector, action){
   var newEntity = Utility.entityFromChar(this.legend, action.character);
   this.grid.set(vector, newEntity);
+  return true;
 };
 
 module.exports = ActionRunner;

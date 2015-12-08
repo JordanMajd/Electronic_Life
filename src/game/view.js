@@ -10,8 +10,6 @@ View.prototype.look = function(direction) {
   var target = this.vector.plus(Utility.directions[direction]);
   if (this.world.grid.isInside(target)) {
     return Utility.charFromEntity(this.world.grid.get(target));
-  } else {
-    return "#";
   }
 };
 View.prototype.findAll = function(character) {

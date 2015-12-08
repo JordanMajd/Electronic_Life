@@ -17,7 +17,7 @@ var directionNames = "n ne e se s sw w nw".split(" ");
 
 
 function entityFromChar(legend, ch) {
-  if (ch === " " || !ch) {
+  if (!ch) {
     return null;
   }
   var entityConstructor = legend.get(ch);

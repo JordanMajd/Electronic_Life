@@ -16,6 +16,7 @@ WorldAnimator.prototype.tick = function() {
 
   //clear terminal
   console.log('\x1B[2J');
+  
   console.log(this.world.toString());
 };
 
