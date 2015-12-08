@@ -44,5 +44,9 @@ ActionRunner.reproduce = function(entity, vector, action) {
   this.grid.set(dest, baby);
   return true;
 };
+ActionRunner.die = function(entity, vector){
+  this.grid.set(vector, null);
+  return true;
+};
 
 module.exports = ActionRunner;
