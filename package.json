@@ -1,13 +1,13 @@
 {
   "name": "electronic_life",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simplified world simulation to demonstrate OOP patterns in JS.",
   "main": "app.js",
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Jordan Majd",
+  "license": "MIT"
 }
