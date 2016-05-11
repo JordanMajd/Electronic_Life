@@ -26,6 +26,8 @@ O represent Animals
 
 Every 1/3 of a second the `World` takes a `turn`. For each turn, every `Entity` in the `World` can take an `Action`. These actions can be `move`, `eat`, `grow` and reproduce.
 
+If you like this project, please give it a :star: for motivation :)
+
 ## Instructions
 
 Keep these questions in mind before you start working on the project, after you have completed the exercise circle back and answer them.
