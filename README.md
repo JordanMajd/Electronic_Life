@@ -1,3 +1,13 @@
+# Warning:
+
+This entire project is soon going to be overridden with generic program that simply supports:
+
+- Rendering to console, dom, svg, canvas.
+- Keeping state of graphs, nodes and edges.
+- Visual layouts of the graphs, primarily square grids and hexagons.
+
+This will serve as a basis for a lot of other projects, namely games and interactive illustrations of algorithms / data structures.
+
 # Electronic Life
 
 The goal of Electronic Life is to create a very simplified simulation of the world using Object Oriented Programming.
