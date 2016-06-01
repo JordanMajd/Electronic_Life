@@ -1,20 +1,11 @@
-# Warning:
-
-This entire project is soon going to be overridden with generic program that simply supports:
-
-- Rendering to console, dom, svg, canvas.
-- Keeping state of graphs, nodes and edges.
-- Visual layouts of the graphs, primarily square grids and hexagons.
-
-This will serve as a basis for a lot of other projects, namely games and interactive illustrations of algorithms / data structures.
-
 # Electronic Life
 
-The goal of Electronic Life is to create a very simplified simulation of the world using Object Oriented Programming.
+The goal of Electronic Life is to use Object Oriented Programming to create a digital ecosystem which acts as a simplified simulation of the world.
 
 The `World` is represented by a `Grid` of characters, every character in the `Grid` represents an `Entity` in that world. An `Entity` can be anything from a wall to a plant to an animal.
 
 Example:
+
 ```
 ############################
 #####        O        ######
@@ -34,9 +25,9 @@ O represent Animals
 * represent Plants
 ```
 
-Every 1/3 of a second the `World` takes a `turn`. For each turn, every `Entity` in the `World` can take an `Action`. These actions can be `move`, `eat`, `grow` and reproduce.
+Every 1/3 of a second the `World` takes a `turn`. For each turn, every `Entity` in the `World` can take an `Action`. These actions can be `move`, `eat`, `grow` and `reproduce`.
 
-If you like this project, please give it a :star: for motivation :)
+If you like this project, please give it a :star: for motivation.
 
 ## Instructions
 
@@ -94,46 +85,48 @@ You may use either design pattern to implement the `Entities`:
 - `loose inheritance` with `Closure Constructors`
 
 Example of `prototypical inheritance` with `object prototypes`:
-```
-//Constructor
+
+```javascript
+// constructor
 function ParentProtoObj(param1, param2){
   this.p1 = param1;
   this.p2 = param2;
 }
-//Method
+// method
 ParentProtoObj.prototype.swap = function(){
   var temp = this.p1;
   this.p1 = this.p2;
   this.p2 = temp;
 }
 
-//Constructor
+// constructor
 function ChildProtoObj(param1, param2){
   //Call parent constructor with this context
   ParentProtoObj.call(this, param1, param2);
 }
 
-//Inherit parent prototypes
+// inherit parent prototypes
 ChildProtoObj.prototype = Object.create(ParentProtoObj.prototype);
 
-//Override ParentProtoObj method
+// override ParentProtoObj method
 ChildProtoObj.prototype.swap = function(){
   this.p1 = 'nope';
   this.p2 = 'nope';
 }
 
-//instantiate objects note: needs new keyword
+// instantiate objects note: needs new keyword
 var myParentProto = new ParentProtoObj('one', 'two');
 var myChildProto = new ChildProtoObj('two','three');
 ```
 
 Example of `loose inheritance` with `closure constructors`:
-```
-//constructor
-function ParentClosureObj(param1, param2){
-  //private logic can go here
 
-  //return an interface to expose what you want to be public
+```javascript
+// constructor
+function ParentClosureObj(param1, param2){
+  // private logic can go here
+
+  // return an interface to expose what you want to be public
   return {
     p1:param1,
     p2:param2,
@@ -144,10 +137,10 @@ function ParentClosureObj(param1, param2){
     }
   };
 }
-//constructor
+// constructor
 function ChildClosureObj(param1, param2){
 
-  //inherit from ParentClosureObj
+  // inherit from ParentClosureObj
   var self = ParentClosureObj(param1, param2);
 
   //override swap method
@@ -156,11 +149,11 @@ function ChildClosureObj(param1, param2){
     this.p2 = 'nope';
   };
 
-  //return interface to expose what you want to be public
+  // return interface to expose what you want to be public
   return self;
 }
 
-//note: no need for new keyword
+// notice: no need for new keyword
 var myParentClos = ParentClosureObj('one', 'two');
 var myChildClos = ChildClosureObj('two','three');
 ```
@@ -228,24 +221,28 @@ Solution branches have yet to be added. Details will be here when they are.
 [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway's_Game_of_Life) was invented by John Conway, a Cambridge mathematician and was first published by the [Scientific American in 1970](http://web.stanford.edu/class/sts145/Library/life.pdf).  It is a simple zero-player game where everything is determined by the games initial state and a few simple rules. Cells are either alive or dead, and every tick new cells are created or old ones die.
 
 1. Survivals. Every cell with two or three neighboring cell survives for the next generation.
-1. Deaths. Each cell with four or more neighbors dies (is removed) from overpopulation. Every
+1. Deaths. Each cell with four or more neighbors dies from overpopulation. Every
 cell with one neighbor or none dies from isolation.
-1. Births. Each empty cell adjacent to exactly three neighbors--no more, no fewer--is a birth cell. A
+1. Births. Each empty cell adjacent to exactly three neighbors is a birth cell. A
 cell is placed on it at the next move.
 
 I've created a branch called `conway` that follows these rules. It can be checked out by running:
-```
+
+```bash
 git checkout conway
 ```
 
 In order to return to your master branch simply checkout master:
-```
+
+```bash
 git checkout master
 ```
 
 ## Project Roadmap:
 
-- Create solution branches.
+- Solution branches.
+- Gif at top.
+- NPM scripts.
 - Build a map generator.
 - Merge in some of the changes made in the `conway` branch.
 - Refactor and reduce the Action and ActionRunner objects to a single object.
@@ -254,7 +251,7 @@ git checkout master
 
 ## About
 
-I started this project as a way to teach students Object Oriented Programming in Javascript. This project is an adaptation of [Eloquent Javascript](http://eloquentjavascript.net/)'s project from [Chapter 7](http://eloquentjavascript.net/07_elife.html). Initially, it was started to just expose the internals of the program so that they could be modified, extended and inherited. Later, it was modified to run in `node` instead of a web browser so that students could save their work and use a more familiar programming environment. Since then I've taken the liberty of making several other architectural changes and as the project evolves I imagine it will diverge further and further from Eloquent Javascript.
+ I started this project as a way to teach students Object Oriented Programming in Javascript. This project is an adaptation of [Eloquent Javascript](http://eloquentjavascript.net/)'s project from [Chapter 7](http://eloquentjavascript.net/07_elife.html). Initially, it was started to just expose the internals of the program so that they could be modified, extended and inherited. Later, it was modified to run in `node` instead of a web browser so that students could save their work and use a more familiar programming environment. Since then, I've taken the liberty of making several other architectural changes and as the project evolves I imagine it will diverge further and further from Eloquent Javascript.
 
 ## License
 
