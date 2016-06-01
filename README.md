@@ -255,3 +255,7 @@ git checkout master
 ## About
 
 I started this project as a way to teach students Object Oriented Programming in Javascript. This project is an adaptation of [Eloquent Javascript](http://eloquentjavascript.net/)'s project from [Chapter 7](http://eloquentjavascript.net/07_elife.html). Initially, it was started to just expose the internals of the program so that they could be modified, extended and inherited. Later, it was modified to run in `node` instead of a web browser so that students could save their work and use a more familiar programming environment. Since then I've taken the liberty of making several other architectural changes and as the project evolves I imagine it will diverge further and further from Eloquent Javascript.
+
+## License
+
+This project uses an MIT license, for more details please view the [LICENSE](/LICENSE) included.
