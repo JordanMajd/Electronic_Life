@@ -56,19 +56,19 @@ Workflow:
 
 ## Running
 
-*From The Command Line:*
+**From The Command Line:**
 
 1. cd into `src`
 1. run `node app.js`
 
-*In a Browser:*
+**In a Browser:**
 
 - Dependencies:
   1. install browserify, `npm install -g browserify`
   1. install http-server, `npm install -g http-server`
 - Implementing:
   1. In `app.js` implement a `domworldanimator` or a `canvasworldanimator` (note these may need edited as they are set up for branch `conway`)
-  1. In `index.html` uncomment the appropriate div, '#canvas-canvas' or `#dom-canvas`
+  1. In `index.html` uncomment the appropriate div, `#canvas-canvas` or `#dom-canvas`
 - Building and running:
   1. in project root, `./build.sh`
   1. `cd dist`
