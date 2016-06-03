@@ -10,7 +10,7 @@ DomWorldAnimator.prototype = Object.create(WorldAnimator.prototype);
 DomWorldAnimator.prototype.tick = function() {
   this.world.turn();
 
-  document.querySelectorAll('#dom-canvas')[0].innerHTML = '<pre>'+ this.world.toString() + '</pre>';
+  document.querySelector('#dom-canvas').innerHTML = '<pre>'+ this.world.toString() + '</pre>';
 };
 
 module.exports = DomWorldAnimator;

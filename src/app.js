@@ -2,6 +2,8 @@
 
 var ActionRunner = require('./game/actionrunner');
 var WorldAnimator = require('./game/worldanimator');
+// var DomWorldAnimator = require('./game/domworldanimator');
+// var CanvasWorldAnimator = require('./game/canvasworldanimator');
 var Grid = require('./game/grid');
 var Utility = require('./game/utility');
 var Vector = require('./game/vector');
@@ -31,4 +33,4 @@ var myWorld = new LifelikeWorld(defaultMap, myLegend);
 
 
 //Megaman EXECUTE! \o/
-new WorldAnimator(myWorld).run();
+new CanvasWorldAnimator(myWorld).run();
